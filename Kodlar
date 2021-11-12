@@ -1,0 +1,20 @@
+const int SensorOutPin = 0; // Pin  
+const int ledPin = 13; 
+int deger;
+const int esik = 800; 
+
+void setup() {
+  pinMode(ledPin, OUTPUT); 
+  Serial.begin(9600);
+}
+void loop() {
+  deger = analogRead(SensorOutPin);
+  if (deger > esik) {
+    digitalWrite(ledPin, HIGH); 
+    delay(500); 
+    digitalWrite(ledPin, LOW);
+  } else
+  {
+    digitalWrite(ledPin, LOW);
+  }
+}
